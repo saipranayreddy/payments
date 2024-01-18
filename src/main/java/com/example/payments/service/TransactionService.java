@@ -79,7 +79,6 @@ public class TransactionService {
     return getBalanceResponse(accountName, user);
   }
 
-  @Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRED, rollbackFor = Exception.class, timeout = 30)
   private BalanceResponse getBalanceResponse(String accountName, User user) {
     try {
       logger.info("Fetching account balance for balance Enquiry: {}, {}", user, accountName);
