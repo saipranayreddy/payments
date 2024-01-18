@@ -10,11 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AccountRequest {
-
   private String userName;
   private String firstName;
   private String lastName;
-
   private String accountName;
   private String emailId;
 

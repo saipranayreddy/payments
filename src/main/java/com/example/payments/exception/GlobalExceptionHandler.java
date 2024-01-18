@@ -18,25 +18,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
   private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
 
-  @ExceptionHandler(value = {ContentNotFoundException.class})
-  public ResponseEntity<Object> handleContentNotFoundException(ContentNotFoundException ex,
-      WebRequest request) {
-    String errorMessage = ex.getMessage();
-    logger.error("Failed to process request due to :{}, ex: {}, request: {}", errorMessage, ex, request);
-    return ResponseEntity
-        .status(HttpStatus.NO_CONTENT)
-        .body(Response.builder()
-            .success(false)
-            .message(errorMessage)
-            .statusCode(HttpStatus.NO_CONTENT.value())
-            .build());
-  }
-
   @ExceptionHandler(value = {ConstraintViolationException.class})
   public ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException ex,
       WebRequest request) {
     String errorMessage = ex.getMessage();
-    logger.error("Failed to process request due to :{}, ex: {}, request: {}", errorMessage, ex, request);
+    logger.error("Failed to process request due to :{}, ex: {}, request: {}", errorMessage, ex,
+        request);
     return ResponseEntity
         .status(HttpStatus.BAD_REQUEST)
         .body(Response.builder()
@@ -49,7 +36,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
   @ExceptionHandler(value = {BadRequest.class})
   public ResponseEntity<Object> handleBadRequestException(BadRequest ex, WebRequest request) {
     String errorMessage = ex.getMessage();
-    logger.error("Failed to process request due to :{}, ex: {}, request: {}", errorMessage, ex, request);
+    logger.error("Failed to process request due to :{}, ex: {}, request: {}", errorMessage, ex,
+        request);
     return ResponseEntity
         .status(HttpStatus.BAD_REQUEST)
         .body(Response.builder()
@@ -64,7 +52,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
   public ResponseEntity<Object> handleInvalidUserDataException(InvalidUserDataException ex,
       WebRequest request) {
     String errorMessage = ex.getMessage();
-    logger.error("Failed to process request due to :{}, ex: {}, request: {}", errorMessage, ex, request);
+    logger.error("Failed to process request due to :{}, ex: {}, request: {}", errorMessage, ex,
+        request);
     return ResponseEntity
         .status(HttpStatus.BAD_REQUEST)
         .body(Response.builder()
@@ -73,7 +62,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
             .statusCode(HttpStatus.BAD_REQUEST.value())
             .build());
   }
-
 
 }
 

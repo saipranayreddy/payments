@@ -1,0 +1,964 @@
+2024-01-18 15:41:01,937 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@3c7f2e47 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@4ecc3620 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:174)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:167)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:145)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:133)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:368)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:319)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1310)
+	at com.example.payments.PaymentsApplication.main(PaymentsApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@3c7f2e47 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+ERROR in ch.qos.logback.classic.pattern.ClassOfCallerConverter@4ecc3620 - failed to parse integer string [1.] java.lang.NumberFormatException: For input string: "1."
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:275)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:253)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:189)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 24 common frames omitted
+	Suppressed: java.lang.NumberFormatException: For input string: "1."
+		at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+		at java.base/java.lang.Integer.parseInt(Integer.java:668)
+		at java.base/java.lang.Integer.parseInt(Integer.java:786)
+		at ch.qos.logback.classic.pattern.NamedConverter.start(NamedConverter.java:92)
+		at ch.qos.logback.core.pattern.ConverterUtil.startConverters(ConverterUtil.java:37)
+		at ch.qos.logback.core.pattern.ConverterUtil.startConverters(ConverterUtil.java:33)
+		at ch.qos.logback.core.pattern.PatternLayoutBase.start(PatternLayoutBase.java:90)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandleComplex(ImplicitModelHandler.java:208)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandle(ImplicitModelHandler.java:186)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:257)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:208)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:122)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:170)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:122)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:65)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:285)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.lambda$loadConfiguration$1(LogbackLoggingSystem.java:247)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.withLoggingSuppressed(LogbackLoggingSystem.java:460)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:242)
+		... 28 common frames omitted
+	Suppressed: java.lang.NumberFormatException: For input string: "1."
+		at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+		at java.base/java.lang.Integer.parseInt(Integer.java:668)
+		at java.base/java.lang.Integer.parseInt(Integer.java:786)
+		at ch.qos.logback.classic.pattern.NamedConverter.start(NamedConverter.java:92)
+		at ch.qos.logback.core.pattern.ConverterUtil.startConverters(ConverterUtil.java:37)
+		at ch.qos.logback.core.pattern.PatternLayoutBase.start(PatternLayoutBase.java:90)
+		at ch.qos.logback.classic.encoder.PatternLayoutEncoder.start(PatternLayoutEncoder.java:28)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandleComplex(ImplicitModelHandler.java:208)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.postHandle(ImplicitModelHandler.java:186)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:257)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:208)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:122)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:170)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:122)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:65)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:285)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.lambda$loadConfiguration$1(LogbackLoggingSystem.java:247)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.withLoggingSuppressed(LogbackLoggingSystem.java:460)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:242)
+		... 28 common frames omitted
+2024-01-18 15:46:12,142 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentsApplication using Java 17.0.7 with PID 4196 (/Users/pingilireddy/Downloads/payments/target/classes started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 15:46:12,144 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 15:46:12,169 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-18 15:46:12,170 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-18 15:46:12,583 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 15:46:12,629 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 40 ms. Found 2 JPA repository interfaces.
+2024-01-18 15:46:13,059 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9999 (http)
+2024-01-18 15:46:13,066 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-9999"]
+2024-01-18 15:46:13,068 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-01-18 15:46:13,068 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-18 15:46:13,108 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-01-18 15:46:13,109 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 939 ms
+2024-01-18 15:46:13,203 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 15:46:13,237 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-18 15:46:13,238 INFO org.hibernate.cfg.Environment [restartedMain] HHH000406: Using bytecode reflection optimizer
+2024-01-18 15:46:13,408 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 15:46:13,425 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-01-18 15:46:13,567 INFO com.zaxxer.hikari.pool.HikariPool [restartedMain] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a358dc3
+2024-01-18 15:46:13,568 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-01-18 15:46:14,208 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 15:46:14,309 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 15:46:14,569 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-18 15:46:14,905 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-01-18 15:46:14,913 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-9999"]
+2024-01-18 15:46:14,926 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9999 (http) with context path ''
+2024-01-18 15:46:14,944 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentsApplication in 3.099 seconds (process running for 3.516)
+2024-01-18 15:46:30,919 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 15:46:30,922 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-18 15:46:30,925 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-01-18 15:46:32,578 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentsApplication using Java 17.0.7 with PID 4221 (/Users/pingilireddy/Downloads/payments/target/classes started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 15:46:32,579 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 15:46:32,606 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-18 15:46:32,606 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-18 15:46:32,997 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 15:46:33,039 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2024-01-18 15:46:33,422 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9999 (http)
+2024-01-18 15:46:33,428 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-9999"]
+2024-01-18 15:46:33,430 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-01-18 15:46:33,430 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-18 15:46:33,477 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-01-18 15:46:33,478 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 871 ms
+2024-01-18 15:46:33,565 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 15:46:33,596 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-18 15:46:33,598 INFO org.hibernate.cfg.Environment [restartedMain] HHH000406: Using bytecode reflection optimizer
+2024-01-18 15:46:33,743 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 15:46:33,759 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-01-18 15:46:33,868 INFO com.zaxxer.hikari.pool.HikariPool [restartedMain] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a358dc3
+2024-01-18 15:46:33,869 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-01-18 15:46:34,384 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 15:46:34,445 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 15:46:34,679 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-18 15:46:35,030 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-01-18 15:46:35,038 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-9999"]
+2024-01-18 15:46:35,048 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9999 (http) with context path ''
+2024-01-18 15:46:35,055 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentsApplication in 2.785 seconds (process running for 3.126)
+2024-01-18 15:47:38,259 INFO org.apache.juli.logging.DirectJDKLog [http-nio-9999-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-18 15:47:38,262 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9999-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-01-18 15:47:38,273 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9999-exec-1] Completed initialization in 10 ms
+2024-01-18 15:47:38,476 INFO com.example.payments.service.UserService [http-nio-9999-exec-1] Successfully Fetched user Details: yashwanth1234
+2024-01-18 15:47:38,477 INFO com.example.payments.service.TransactionService [http-nio-9999-exec-1] Fetching account balance for deposit: TransactionRequest(userName=yashwanth1234, accountName=hdfc, amount=1000.0)
+2024-01-18 15:47:38,508 INFO com.example.payments.service.AccountService [http-nio-9999-exec-1] Successfully Fetched user Details: User(userId=403, userName=yashwanth1234, firstName=yashwanth, lastName=Kore, emailId=yashwanth1234@gmail.com), hdfc
+2024-01-18 15:47:38,508 INFO com.example.payments.service.TransactionService [http-nio-9999-exec-1] Initiating deposit: TransactionRequest(userName=yashwanth1234, accountName=hdfc, amount=1000.0)
+2024-01-18 15:47:38,560 INFO com.example.payments.service.TransactionService [http-nio-9999-exec-1] Deposit Transaction successfully processed: Account(accountId=452, balance=1800.0, user=User(userId=403, userName=yashwanth1234, firstName=yashwanth, lastName=Kore, emailId=yashwanth1234@gmail.com), accountName=hdfc)
+2024-01-18 15:52:24,823 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 15:52:25,055 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-18 15:52:25,190 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-01-18 15:52:27,815 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting PaymentsApplication using Java 17.0.7 with PID 4565 (/Users/pingilireddy/Downloads/payments/target/classes started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 15:52:27,817 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 15:52:27,846 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-18 15:52:27,846 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-18 15:52:28,219 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 15:52:28,261 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2024-01-18 15:52:28,719 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 9999 (http)
+2024-01-18 15:52:28,725 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-9999"]
+2024-01-18 15:52:28,727 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2024-01-18 15:52:28,727 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-18 15:52:28,768 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-01-18 15:52:28,769 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 922 ms
+2024-01-18 15:52:28,860 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 15:52:28,893 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-18 15:52:28,894 INFO org.hibernate.cfg.Environment [restartedMain] HHH000406: Using bytecode reflection optimizer
+2024-01-18 15:52:29,046 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 15:52:29,060 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-01-18 15:52:29,186 INFO com.zaxxer.hikari.pool.HikariPool [restartedMain] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@25e0d5cc
+2024-01-18 15:52:29,187 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-01-18 15:52:29,703 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 15:52:29,794 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 15:52:30,042 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-18 15:52:30,366 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-01-18 15:52:30,377 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-9999"]
+2024-01-18 15:52:30,387 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 9999 (http) with context path ''
+2024-01-18 15:52:30,394 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started PaymentsApplication in 2.936 seconds (process running for 3.413)
+2024-01-18 15:52:37,683 INFO org.apache.juli.logging.DirectJDKLog [http-nio-9999-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-18 15:52:37,684 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9999-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-01-18 15:52:37,688 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-9999-exec-1] Completed initialization in 4 ms
+2024-01-18 15:52:38,005 INFO com.example.payments.service.UserService [http-nio-9999-exec-1] Successfully Fetched user Details: yashwanth1234
+2024-01-18 15:52:38,006 INFO com.example.payments.service.TransactionService [http-nio-9999-exec-1] Fetching account balance for deposit: TransactionRequest(userName=yashwanth1234, accountName=hdfc, amount=1000.0)
+2024-01-18 15:52:38,017 INFO com.example.payments.service.AccountService [http-nio-9999-exec-1] Successfully Fetched user Details: User(userId=403, userName=yashwanth1234, firstName=yashwanth, lastName=Kore, emailId=yashwanth1234@gmail.com), hdfc
+2024-01-18 15:52:38,018 INFO com.example.payments.service.TransactionService [http-nio-9999-exec-1] Initiating deposit: TransactionRequest(userName=yashwanth1234, accountName=hdfc, amount=1000.0)
+2024-01-18 15:52:38,095 INFO com.example.payments.service.TransactionService [http-nio-9999-exec-1] Deposit Transaction successfully processed: Account(accountId=452, balance=2800.0, user=User(userId=403, userName=yashwanth1234, firstName=yashwanth, lastName=Kore, emailId=yashwanth1234@gmail.com), accountName=hdfc)2024-01-18 15:57:15,734 INFO com.example.payments.service.UserService [http-nio-9999-exec-4] Successfully Fetched user Details: yashwanth1234
+2024-01-18 15:57:15,737 INFO com.example.payments.service.TransactionService [http-nio-9999-exec-4] Fetching account balance for deposit: TransactionRequest(userName=yashwanth1234, accountName=hdfc, amount=1000.0)
+2024-01-18 15:57:15,748 INFO com.example.payments.service.AccountService [http-nio-9999-exec-4] Successfully Fetched user Details: User(userId=403, userName=yashwanth1234, firstName=yashwanth, lastName=Kore, emailId=yashwanth1234@gmail.com), hdfc
+2024-01-18 15:57:15,749 INFO com.example.payments.service.TransactionService [http-nio-9999-exec-4] Initiating deposit: TransactionRequest(userName=yashwanth1234, accountName=hdfc, amount=1000.0)
+2024-01-18 15:57:15,784 INFO com.example.payments.service.TransactionService [http-nio-9999-exec-4] Deposit Transaction successfully processed: Account(accountId=452, balance=3800.0, user=User(userId=403, userName=yashwanth1234, firstName=yashwanth, lastName=Kore, emailId=yashwanth1234@gmail.com), accountName=hdfc)
+2024-01-18 15:59:15,939 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 15:59:15,955 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-18 15:59:15,958 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-01-18 16:01:26,375 INFO org.springframework.boot.StartupInfoLogger [main] Starting AccountRepositoryTest using Java 17.0.7 with PID 5199 (started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 16:01:26,376 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 16:01:26,571 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 16:01:26,611 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 33 ms. Found 2 JPA repository interfaces.
+2024-01-18 16:01:26,645 INFO org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor [main] Replacing 'dataSource' DataSource bean with embedded version
+2024-01-18 16:01:26,721 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource': Failed to replace DataSource with an embedded database for tests. If you want an embedded database please put a supported one on the classpath or tune the replace attribute of @AutoConfigureTestDatabase.
+2024-01-18 16:01:26,724 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-01-18 16:01:26,736 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource': Failed to replace DataSource with an embedded database for tests. If you want an embedded database please put a supported one on the classpath or tune the replace attribute of @AutoConfigureTestDatabase.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1330)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:558)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:746)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1421)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:545)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:187)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:119)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:127)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:141)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:97)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:241)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:377)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:382)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:377)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:376)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:289)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:288)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:278)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:277)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:105)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:104)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource': Failed to replace DataSource with an embedded database for tests. If you want an embedded database please put a supported one on the classpath or tune the replace attribute of @AutoConfigureTestDatabase.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1768)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:910)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
+	... 98 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to replace DataSource with an embedded database for tests. If you want an embedded database please put a supported one on the classpath or tune the replace attribute of @AutoConfigureTestDatabase.
+	at org.springframework.util.Assert.state(Assert.java:76)
+	at org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceFactory.getEmbeddedDatabase(TestDatabaseAutoConfiguration.java:188)
+	at org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceFactoryBean.afterPropertiesSet(TestDatabaseAutoConfiguration.java:153)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1815)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1764)
+	... 109 common frames omitted
+2024-01-18 16:01:26,740 ERROR org.springframework.test.context.TestContextManager [main] Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener] to prepare test instance [com.example.payments.repository.AccountRepositoryTest@378cfecf]
+java.lang.IllegalStateException: Failed to load ApplicationContext for [MergedContextConfiguration@1f6917fb testClass = com.example.payments.repository.AccountRepositoryTest, locations = [], classes = [com.example.payments.PaymentsApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceLocations = [], propertySourceProperties = ["org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTestContextBootstrapper=true"], contextCustomizers = [[ImportsContextCustomizer@41eb94bc key = [org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration, org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration, org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration, org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration, org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration, org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration, org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4f80542f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@130c12b7, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@f09733f, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@351584c0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@f4528cc4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@3e27ba32, org.springframework.boot.test.context.SpringBootTestAnnotation@7a6f7bac], contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:143)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:127)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:141)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:97)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:241)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:377)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:382)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:377)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:376)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:289)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:288)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:278)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:277)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:105)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:104)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource': Failed to replace DataSource with an embedded database for tests. If you want an embedded database please put a supported one on the classpath or tune the replace attribute of @AutoConfigureTestDatabase.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:545)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1330)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:558)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1166)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:940)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:616)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:746)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:448)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1421)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:545)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:187)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:119)
+	... 72 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource': Failed to replace DataSource with an embedded database for tests. If you want an embedded database please put a supported one on the classpath or tune the replace attribute of @AutoConfigureTestDatabase.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1768)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:596)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:518)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1417)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1337)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:910)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
+	... 98 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to replace DataSource with an embedded database for tests. If you want an embedded database please put a supported one on the classpath or tune the replace attribute of @AutoConfigureTestDatabase.
+	at org.springframework.util.Assert.state(Assert.java:76)
+	at org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceFactory.getEmbeddedDatabase(TestDatabaseAutoConfiguration.java:188)
+	at org.springframework.boot.test.autoconfigure.jdbc.TestDatabaseAutoConfiguration$EmbeddedDataSourceFactoryBean.afterPropertiesSet(TestDatabaseAutoConfiguration.java:153)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1815)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1764)
+	... 109 common frames omitted
+2024-01-18 16:03:48,802 INFO org.springframework.boot.StartupInfoLogger [main] Starting AccountRepositoryTest using Java 17.0.7 with PID 5330 (started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 16:03:48,803 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 16:03:48,996 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 16:03:49,039 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
+2024-01-18 16:03:49,220 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 16:03:49,259 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-18 16:03:49,262 INFO org.hibernate.cfg.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-01-18 16:03:49,430 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 16:03:49,447 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2024-01-18 16:03:49,586 INFO com.zaxxer.hikari.pool.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3312f4f4
+2024-01-18 16:03:49,587 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-01-18 16:03:50,108 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 16:03:50,184 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:03:50,404 INFO org.springframework.boot.StartupInfoLogger [main] Started AccountRepositoryTest in 1.834 seconds (process running for 2.384)
+2024-01-18 16:03:50,964 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:03:50,965 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-18 16:03:50,967 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-01-18 16:04:20,570 INFO org.springframework.boot.StartupInfoLogger [main] Starting AccountRepositoryTest using Java 17.0.7 with PID 5373 (started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 16:04:20,572 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 16:04:20,761 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 16:04:20,803 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2024-01-18 16:04:20,981 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 16:04:21,020 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-18 16:04:21,021 INFO org.hibernate.cfg.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-01-18 16:04:21,174 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 16:04:21,189 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2024-01-18 16:04:21,313 INFO com.zaxxer.hikari.pool.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a31ca20
+2024-01-18 16:04:21,314 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-01-18 16:04:21,815 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 16:04:21,879 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:04:22,100 INFO org.springframework.boot.StartupInfoLogger [main] Started AccountRepositoryTest in 1.784 seconds (process running for 2.288)
+2024-01-18 16:04:22,729 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:04:22,731 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-18 16:04:22,733 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-01-18 16:08:44,079 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserRepositoryTest using Java 17.0.7 with PID 5655 (started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 16:08:44,080 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 16:08:44,274 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 16:08:44,315 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2024-01-18 16:08:44,489 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 16:08:44,524 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-18 16:08:44,526 INFO org.hibernate.cfg.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-01-18 16:08:44,696 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 16:08:44,712 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2024-01-18 16:08:44,828 INFO com.zaxxer.hikari.pool.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@78e68401
+2024-01-18 16:08:44,829 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-01-18 16:08:45,358 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 16:08:45,441 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:08:45,661 INFO org.springframework.boot.StartupInfoLogger [main] Started UserRepositoryTest in 1.821 seconds (process running for 2.344)
+2024-01-18 16:08:46,091 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:08:46,093 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-18 16:08:46,095 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-01-18 16:09:04,367 INFO org.springframework.boot.StartupInfoLogger [main] Starting AccountRepositoryTest using Java 17.0.7 with PID 5698 (started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 16:09:04,368 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 16:09:04,550 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 16:09:04,588 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2024-01-18 16:09:04,785 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 16:09:04,819 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-18 16:09:04,821 INFO org.hibernate.cfg.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-01-18 16:09:04,987 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 16:09:05,002 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2024-01-18 16:09:05,131 INFO com.zaxxer.hikari.pool.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a66c35a
+2024-01-18 16:09:05,132 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-01-18 16:09:05,657 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 16:09:05,723 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:09:05,940 INFO org.springframework.boot.StartupInfoLogger [main] Started AccountRepositoryTest in 1.819 seconds (process running for 2.357)
+2024-01-18 16:09:06,528 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:09:06,535 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.repository.UserRepositoryTest
+2024-01-18 16:09:06,553 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:09:06,562 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.controller.UserControllerTest
+2024-01-18 16:09:06,570 INFO org.springframework.boot.devtools.restart.RestartApplicationListener [main] Restart disabled due to context in which it is running
+2024-01-18 16:09:06,593 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserControllerTest using Java 17.0.7 with PID 5698 (started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 16:09:06,593 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 16:09:06,866 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 16:09:06,889 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 22 ms. Found 2 JPA repository interfaces.
+2024-01-18 16:09:07,024 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 16:09:07,049 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 16:09:07,049 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-2 - Starting...
+2024-01-18 16:09:07,128 INFO com.zaxxer.hikari.pool.HikariPool [main] HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@5a8149f6
+2024-01-18 16:09:07,129 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-2 - Start completed.
+2024-01-18 16:09:07,164 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 16:09:07,214 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:09:07,346 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-18 16:09:07,635 INFO org.springframework.boot.StartupInfoLogger [main] Started UserControllerTest in 1.065 seconds (process running for 4.052)
+2024-01-18 16:09:07,729 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.controller.TransactionControllerTest]: TransactionControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:09:07,731 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.controller.TransactionControllerTest
+2024-01-18 16:09:07,802 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.PaymentsApplicationTests]: PaymentsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:09:07,811 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.PaymentsApplicationTests
+2024-01-18 16:09:07,818 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.service.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:09:07,823 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.service.UserServiceTest
+2024-01-18 16:09:07,828 INFO com.example.payments.service.UserService [main] Successfully Fetched user Details: AccountRequest(userName=John, firstName=Doe, lastName=johndoe, accountName=sbi, emailId=john@example.com)
+2024-01-18 16:09:07,836 INFO com.example.payments.service.UserService [main] Successfully Fetched user Details: AccountRequest(userName=John, firstName=Doe, lastName=johndoe, accountName=sbi, emailId=john@example.com)
+2024-01-18 16:09:07,839 INFO com.example.payments.service.UserService [main] Successfully Fetched user Details: existingUser
+2024-01-18 16:09:07,846 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.service.AccountServiceTest]: AccountServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:09:07,847 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.service.AccountServiceTest
+2024-01-18 16:09:07,890 INFO com.example.payments.service.AccountService [main] Successfully Fetched Account Details: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), AccountRequest(userName=null, firstName=null, lastName=null, accountName=accountName, emailId=null)
+2024-01-18 16:09:07,898 INFO com.example.payments.service.AccountService [main] Successfully Fetched Account Details: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), AccountRequest(userName=null, firstName=null, lastName=null, accountName=accountName, emailId=null)
+2024-01-18 16:09:07,900 INFO com.example.payments.service.AccountService [main] Successfully Fetched user Details: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName
+2024-01-18 16:09:07,903 INFO com.example.payments.service.AccountService [main] Successfully Fetched user Details: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), nonExistingAccount
+2024-01-18 16:09:07,906 INFO com.example.payments.service.AccountService [main] Successfully Fetched user Details: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), invalidAccount
+2024-01-18 16:09:07,909 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.service.TransactionServiceTest]: TransactionServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:09:07,910 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.service.TransactionServiceTest
+2024-01-18 16:09:07,914 INFO com.example.payments.service.TransactionService [pool-3-thread-4] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:09:07,915 INFO com.example.payments.service.TransactionService [pool-3-thread-9] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:07,915 INFO com.example.payments.service.TransactionService [pool-3-thread-5] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:07,915 INFO com.example.payments.service.TransactionService [pool-3-thread-7] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:07,914 INFO com.example.payments.service.TransactionService [pool-3-thread-3] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:07,917 INFO com.example.payments.service.TransactionService [pool-3-thread-4] Initiating withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:09:07,914 INFO com.example.payments.service.TransactionService [pool-3-thread-6] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:09:07,917 INFO com.example.payments.service.TransactionService [pool-3-thread-9] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:07,916 INFO com.example.payments.service.TransactionService [pool-3-thread-10] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:09:07,917 INFO com.example.payments.service.TransactionService [pool-3-thread-5] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:07,917 INFO com.example.payments.service.TransactionService [pool-3-thread-3] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:07,917 INFO com.example.payments.service.TransactionService [pool-3-thread-7] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:07,917 INFO com.example.payments.service.TransactionService [pool-3-thread-6] Initiating withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:09:07,914 INFO com.example.payments.service.TransactionService [pool-3-thread-2] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:09:07,915 INFO com.example.payments.service.TransactionService [pool-3-thread-8] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:09:07,917 INFO com.example.payments.service.TransactionService [pool-3-thread-10] Initiating withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:09:07,918 INFO com.example.payments.service.TransactionService [pool-3-thread-2] Initiating withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:09:07,918 INFO com.example.payments.service.TransactionService [pool-3-thread-8] Initiating withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:09:07,914 INFO com.example.payments.service.TransactionService [pool-3-thread-1] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:07,918 INFO com.example.payments.service.TransactionService [pool-3-thread-1] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,020 INFO com.example.payments.service.TransactionService [pool-3-thread-3] Deposit Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:09:08,020 INFO com.example.payments.service.TransactionService [pool-3-thread-6] Withdrawal Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:09:08,022 INFO com.example.payments.service.TransactionService [pool-3-thread-7] Deposit Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:09:08,022 INFO com.example.payments.service.TransactionService [pool-3-thread-1] Deposit Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:09:08,022 INFO com.example.payments.service.TransactionService [pool-3-thread-4] Withdrawal Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:09:08,022 INFO com.example.payments.service.TransactionService [pool-3-thread-9] Deposit Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:09:08,023 INFO com.example.payments.service.TransactionService [pool-3-thread-10] Withdrawal Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:09:08,023 INFO com.example.payments.service.TransactionService [pool-3-thread-5] Deposit Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:09:08,023 INFO com.example.payments.service.TransactionService [pool-3-thread-8] Withdrawal Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:09:08,023 INFO com.example.payments.service.TransactionService [pool-3-thread-2] Withdrawal Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:09:08,026 INFO com.example.payments.service.TransactionService [main] Fetching account balance for balance Enquiry: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName
+2024-01-18 16:09:08,027 INFO com.example.payments.service.TransactionService [main] Balance successfully fetched: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName
+2024-01-18 16:09:08,031 INFO com.example.payments.service.TransactionService [main] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=150.0)
+2024-01-18 16:09:08,031 ERROR com.example.payments.service.TransactionService [main] Error processing withdrawal transaction: TransactionRequest(userName=username, accountName=accountName, amount=150.0)
+com.example.payments.exception.InvalidUserDataException: Insufficient funds in the user account
+	at com.example.payments.service.TransactionService.getTransactionResponseAfterWithdrawal(TransactionService.java:64)
+	at com.example.payments.service.TransactionService.withdrawal(TransactionService.java:54)
+	at com.example.payments.service.TransactionServiceTest.lambda$testWithdrawalWithInsufficientFunds$0(TransactionServiceTest.java:80)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3083)
+	at com.example.payments.service.TransactionServiceTest.testWithdrawalWithInsufficientFunds(TransactionServiceTest.java:80)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:50)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-4] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-3] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-6] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-7] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-1] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-3] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-8] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-6] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-2] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-5] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-4] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-1] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-9] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-7] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-2] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-5] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,037 INFO com.example.payments.service.TransactionService [pool-4-thread-8] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,038 INFO com.example.payments.service.TransactionService [pool-4-thread-10] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,038 INFO com.example.payments.service.TransactionService [pool-4-thread-9] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,038 INFO com.example.payments.service.TransactionService [pool-4-thread-10] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,138 INFO com.example.payments.service.TransactionService [pool-4-thread-9] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:09:08,140 INFO com.example.payments.service.TransactionService [pool-4-thread-1] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:09:08,140 INFO com.example.payments.service.TransactionService [pool-4-thread-8] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:09:08,140 INFO com.example.payments.service.TransactionService [pool-4-thread-4] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:09:08,140 INFO com.example.payments.service.TransactionService [pool-4-thread-2] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:09:08,140 INFO com.example.payments.service.TransactionService [pool-4-thread-6] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:09:08,140 INFO com.example.payments.service.TransactionService [pool-4-thread-10] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:09:08,142 INFO com.example.payments.service.TransactionService [pool-4-thread-3] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:09:08,143 INFO com.example.payments.service.TransactionService [pool-4-thread-7] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:09:08,143 INFO com.example.payments.service.TransactionService [pool-4-thread-5] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:09:08,146 INFO com.example.payments.service.TransactionService [main] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,147 INFO com.example.payments.service.TransactionService [main] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:09:08,147 INFO com.example.payments.service.TransactionService [main] Deposit Transaction successfully processed: Account(accountId=null, balance=300.0, user=null, accountName=null)
+2024-01-18 16:09:08,150 INFO com.example.payments.service.TransactionService [main] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:09:08,150 INFO com.example.payments.service.TransactionService [main] Initiating withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:09:08,150 INFO com.example.payments.service.TransactionService [main] Withdrawal Transaction successfully processed: Account(accountId=null, balance=50.0, user=null, accountName=null)
+2024-01-18 16:09:08,160 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:09:08,162 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-18 16:09:08,169 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-01-18 16:09:08,171 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:09:08,172 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown initiated...
+2024-01-18 16:09:08,173 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown completed.
+2024-01-18 16:09:51,183 INFO org.springframework.boot.StartupInfoLogger [main] Starting AccountRepositoryTest using Java 17.0.7 with PID 5779 (started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 16:09:51,185 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 16:09:51,374 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 16:09:51,409 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 31 ms. Found 2 JPA repository interfaces.
+2024-01-18 16:09:51,594 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 16:09:51,640 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-18 16:09:51,642 INFO org.hibernate.cfg.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-01-18 16:09:51,800 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 16:09:51,818 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2024-01-18 16:09:51,943 INFO com.zaxxer.hikari.pool.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@411fa0ce
+2024-01-18 16:09:51,944 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-01-18 16:09:52,452 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 16:09:52,513 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:09:52,723 INFO org.springframework.boot.StartupInfoLogger [main] Started AccountRepositoryTest in 1.775 seconds (process running for 2.303)
+2024-01-18 16:09:53,171 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:09:53,172 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-18 16:09:53,175 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-01-18 16:10:10,731 INFO org.springframework.boot.StartupInfoLogger [main] Starting AccountRepositoryTest using Java 17.0.7 with PID 5826 (started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 16:10:10,732 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 16:10:10,915 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 16:10:10,950 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
+2024-01-18 16:10:11,148 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 16:10:11,186 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-18 16:10:11,188 INFO org.hibernate.cfg.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-01-18 16:10:11,345 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 16:10:11,361 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2024-01-18 16:10:11,496 INFO com.zaxxer.hikari.pool.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@21b51e59
+2024-01-18 16:10:11,497 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-01-18 16:10:12,019 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 16:10:12,095 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:10:12,309 INFO org.springframework.boot.StartupInfoLogger [main] Started AccountRepositoryTest in 1.826 seconds (process running for 2.372)
+2024-01-18 16:10:12,778 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:10:12,782 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.repository.UserRepositoryTest
+2024-01-18 16:10:12,794 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:10:12,800 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.controller.UserControllerTest
+2024-01-18 16:10:12,808 INFO org.springframework.boot.devtools.restart.RestartApplicationListener [main] Restart disabled due to context in which it is running
+2024-01-18 16:10:12,822 INFO org.springframework.boot.StartupInfoLogger [main] Starting UserControllerTest using Java 17.0.7 with PID 5826 (started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 16:10:12,822 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 16:10:12,972 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 16:10:12,989 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 16 ms. Found 2 JPA repository interfaces.
+2024-01-18 16:10:13,111 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 16:10:13,114 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 16:10:13,115 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-2 - Starting...
+2024-01-18 16:10:13,130 INFO com.zaxxer.hikari.pool.HikariPool [main] HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@642334d6
+2024-01-18 16:10:13,130 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-2 - Start completed.
+2024-01-18 16:10:13,161 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 16:10:13,205 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:10:13,325 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-18 16:10:13,603 INFO org.springframework.boot.StartupInfoLogger [main] Started UserControllerTest in 0.794 seconds (process running for 3.665)
+2024-01-18 16:10:13,745 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.controller.TransactionControllerTest]: TransactionControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:10:13,748 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.controller.TransactionControllerTest
+2024-01-18 16:10:13,831 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.PaymentsApplicationTests]: PaymentsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:10:13,839 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.PaymentsApplicationTests
+2024-01-18 16:10:13,846 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.service.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:10:13,855 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.service.UserServiceTest
+2024-01-18 16:10:13,925 INFO com.example.payments.service.UserService [main] Successfully Fetched user Details: AccountRequest(userName=John, firstName=Doe, lastName=johndoe, accountName=sbi, emailId=john@example.com)
+2024-01-18 16:10:13,935 INFO com.example.payments.service.UserService [main] Successfully Fetched user Details: AccountRequest(userName=John, firstName=Doe, lastName=johndoe, accountName=sbi, emailId=john@example.com)
+2024-01-18 16:10:13,938 INFO com.example.payments.service.UserService [main] Successfully Fetched user Details: existingUser
+2024-01-18 16:10:13,944 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.service.AccountServiceTest]: AccountServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:10:13,945 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.service.AccountServiceTest
+2024-01-18 16:10:13,989 INFO com.example.payments.service.AccountService [main] Successfully Fetched Account Details: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), AccountRequest(userName=null, firstName=null, lastName=null, accountName=accountName, emailId=null)
+2024-01-18 16:10:13,996 INFO com.example.payments.service.AccountService [main] Successfully Fetched Account Details: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), AccountRequest(userName=null, firstName=null, lastName=null, accountName=accountName, emailId=null)
+2024-01-18 16:10:13,999 INFO com.example.payments.service.AccountService [main] Successfully Fetched user Details: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName
+2024-01-18 16:10:14,002 INFO com.example.payments.service.AccountService [main] Successfully Fetched user Details: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), nonExistingAccount
+2024-01-18 16:10:14,005 INFO com.example.payments.service.AccountService [main] Successfully Fetched user Details: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), invalidAccount
+2024-01-18 16:10:14,008 INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [com.example.payments.service.TransactionServiceTest]: TransactionServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-18 16:10:14,010 INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration com.example.payments.PaymentsApplication for test class com.example.payments.service.TransactionServiceTest
+2024-01-18 16:10:14,014 INFO com.example.payments.service.TransactionService [pool-3-thread-7] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,014 INFO com.example.payments.service.TransactionService [pool-3-thread-2] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:10:14,014 INFO com.example.payments.service.TransactionService [pool-3-thread-6] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:10:14,014 INFO com.example.payments.service.TransactionService [pool-3-thread-3] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,014 INFO com.example.payments.service.TransactionService [pool-3-thread-5] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,014 INFO com.example.payments.service.TransactionService [pool-3-thread-4] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:10:14,016 INFO com.example.payments.service.TransactionService [pool-3-thread-6] Initiating withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:10:14,016 INFO com.example.payments.service.TransactionService [pool-3-thread-3] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,016 INFO com.example.payments.service.TransactionService [pool-3-thread-2] Initiating withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:10:14,014 INFO com.example.payments.service.TransactionService [pool-3-thread-1] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,016 INFO com.example.payments.service.TransactionService [pool-3-thread-5] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,016 INFO com.example.payments.service.TransactionService [pool-3-thread-4] Initiating withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:10:14,016 INFO com.example.payments.service.TransactionService [pool-3-thread-9] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,016 INFO com.example.payments.service.TransactionService [pool-3-thread-7] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,016 INFO com.example.payments.service.TransactionService [pool-3-thread-10] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:10:14,016 INFO com.example.payments.service.TransactionService [pool-3-thread-1] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,016 INFO com.example.payments.service.TransactionService [pool-3-thread-9] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,015 INFO com.example.payments.service.TransactionService [pool-3-thread-8] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:10:14,016 INFO com.example.payments.service.TransactionService [pool-3-thread-10] Initiating withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:10:14,016 INFO com.example.payments.service.TransactionService [pool-3-thread-8] Initiating withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:10:14,119 INFO com.example.payments.service.TransactionService [pool-3-thread-9] Deposit Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:10:14,121 INFO com.example.payments.service.TransactionService [pool-3-thread-6] Withdrawal Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:10:14,121 INFO com.example.payments.service.TransactionService [pool-3-thread-3] Deposit Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:10:14,121 INFO com.example.payments.service.TransactionService [pool-3-thread-10] Withdrawal Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:10:14,121 INFO com.example.payments.service.TransactionService [pool-3-thread-7] Deposit Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:10:14,121 INFO com.example.payments.service.TransactionService [pool-3-thread-2] Withdrawal Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:10:14,121 INFO com.example.payments.service.TransactionService [pool-3-thread-8] Withdrawal Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:10:14,121 INFO com.example.payments.service.TransactionService [pool-3-thread-4] Withdrawal Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:10:14,121 INFO com.example.payments.service.TransactionService [pool-3-thread-5] Deposit Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:10:14,121 INFO com.example.payments.service.TransactionService [pool-3-thread-1] Deposit Transaction successfully processed: Account(accountId=null, balance=750.0, user=null, accountName=null)
+2024-01-18 16:10:14,124 INFO com.example.payments.service.TransactionService [main] Fetching account balance for balance Enquiry: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName
+2024-01-18 16:10:14,125 INFO com.example.payments.service.TransactionService [main] Balance successfully fetched: User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName
+2024-01-18 16:10:14,129 INFO com.example.payments.service.TransactionService [main] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=150.0)
+2024-01-18 16:10:14,129 ERROR com.example.payments.service.TransactionService [main] Error processing withdrawal transaction: TransactionRequest(userName=username, accountName=accountName, amount=150.0)
+com.example.payments.exception.InvalidUserDataException: Insufficient funds in the user account
+	at com.example.payments.service.TransactionService.getTransactionResponseAfterWithdrawal(TransactionService.java:64)
+	at com.example.payments.service.TransactionService.withdrawal(TransactionService.java:54)
+	at com.example.payments.service.TransactionServiceTest.lambda$testWithdrawalWithInsufficientFunds$0(TransactionServiceTest.java:80)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:53)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3083)
+	at com.example.payments.service.TransactionServiceTest.testWithdrawalWithInsufficientFunds(TransactionServiceTest.java:80)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:50)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+2024-01-18 16:10:14,134 INFO com.example.payments.service.TransactionService [pool-4-thread-2] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,134 INFO com.example.payments.service.TransactionService [pool-4-thread-3] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,134 INFO com.example.payments.service.TransactionService [pool-4-thread-4] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,134 INFO com.example.payments.service.TransactionService [pool-4-thread-8] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-1] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-3] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,134 INFO com.example.payments.service.TransactionService [pool-4-thread-5] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,134 INFO com.example.payments.service.TransactionService [pool-4-thread-6] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-8] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-1] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-5] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,134 INFO com.example.payments.service.TransactionService [pool-4-thread-7] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-2] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-9] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-4] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-6] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-10] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-7] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-9] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,135 INFO com.example.payments.service.TransactionService [pool-4-thread-10] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,236 INFO com.example.payments.service.TransactionService [pool-4-thread-2] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:10:14,236 INFO com.example.payments.service.TransactionService [pool-4-thread-4] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:10:14,236 INFO com.example.payments.service.TransactionService [pool-4-thread-6] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:10:14,237 INFO com.example.payments.service.TransactionService [pool-4-thread-8] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:10:14,237 INFO com.example.payments.service.TransactionService [pool-4-thread-9] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:10:14,240 INFO com.example.payments.service.TransactionService [pool-4-thread-1] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:10:14,240 INFO com.example.payments.service.TransactionService [pool-4-thread-5] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:10:14,240 INFO com.example.payments.service.TransactionService [pool-4-thread-3] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:10:14,240 INFO com.example.payments.service.TransactionService [pool-4-thread-7] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:10:14,240 INFO com.example.payments.service.TransactionService [pool-4-thread-10] Deposit Transaction successfully processed: Account(accountId=null, balance=1000.0, user=User(userId=null, userName=username, firstName=null, lastName=null, emailId=null), accountName=accountName)
+2024-01-18 16:10:14,243 INFO com.example.payments.service.TransactionService [main] Fetching account balance for deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,244 INFO com.example.payments.service.TransactionService [main] Initiating deposit: TransactionRequest(userName=username, accountName=accountName, amount=100.0)
+2024-01-18 16:10:14,244 INFO com.example.payments.service.TransactionService [main] Deposit Transaction successfully processed: Account(accountId=null, balance=300.0, user=null, accountName=null)
+2024-01-18 16:10:14,246 INFO com.example.payments.service.TransactionService [main] Fetching account balance for withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:10:14,246 INFO com.example.payments.service.TransactionService [main] Initiating withdrawal: TransactionRequest(userName=username, accountName=accountName, amount=50.0)
+2024-01-18 16:10:14,247 INFO com.example.payments.service.TransactionService [main] Withdrawal Transaction successfully processed: Account(accountId=null, balance=50.0, user=null, accountName=null)
+2024-01-18 16:10:14,256 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:10:14,257 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-18 16:10:14,260 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-01-18 16:10:14,262 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:10:14,263 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown initiated...
+2024-01-18 16:10:14,264 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-2 - Shutdown completed.
+2024-01-18 16:10:23,062 INFO org.springframework.boot.StartupInfoLogger [main] Starting AccountRepositoryTest using Java 17.0.7 with PID 5878 (started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 16:10:23,063 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 16:10:23,249 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 16:10:23,285 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2024-01-18 16:10:23,467 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 16:10:23,491 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-18 16:10:23,492 INFO org.hibernate.cfg.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-01-18 16:10:23,624 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 16:10:23,638 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2024-01-18 16:10:23,763 INFO com.zaxxer.hikari.pool.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@76cdafa3
+2024-01-18 16:10:23,764 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-01-18 16:10:24,233 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 16:10:24,294 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:10:24,496 INFO org.springframework.boot.StartupInfoLogger [main] Started AccountRepositoryTest in 1.652 seconds (process running for 2.117)
+2024-01-18 16:10:24,906 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:10:24,907 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-18 16:10:24,909 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-01-18 16:10:31,986 INFO org.springframework.boot.StartupInfoLogger [main] Starting AccountRepositoryTest using Java 17.0.7 with PID 5902 (started by pingilireddy in /Users/pingilireddy/Downloads/payments)
+2024-01-18 16:10:31,987 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-01-18 16:10:32,160 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-18 16:10:32,197 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2024-01-18 16:10:32,364 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-18 16:10:32,391 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 6.2.17.Final
+2024-01-18 16:10:32,392 INFO org.hibernate.cfg.Environment [main] HHH000406: Using bytecode reflection optimizer
+2024-01-18 16:10:32,533 INFO org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-18 16:10:32,546 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2024-01-18 16:10:32,652 INFO com.zaxxer.hikari.pool.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@357f6391
+2024-01-18 16:10:32,653 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-01-18 16:10:33,128 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-18 16:10:33,192 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:10:33,412 INFO org.springframework.boot.StartupInfoLogger [main] Started AccountRepositoryTest in 1.641 seconds (process running for 2.1)
+2024-01-18 16:10:33,843 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-18 16:10:33,844 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-01-18 16:10:33,847 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

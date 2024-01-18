@@ -32,7 +32,7 @@ public class TransactionService {
     return getTransactionResponseAfterDeposit(request, user);
   }
 
-  @Transactional(isolation = Isolation.SERIALIZABLE)
+  @Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRED, rollbackFor = Exception.class, timeout = 30)
   public TransactionResponse getTransactionResponseAfterDeposit(TransactionRequest request,
       User user) {
     try {
